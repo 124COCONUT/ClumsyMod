@@ -1,0 +1,20 @@
+{
+  "projectVersion": 2,
+  "files": [
+    "MerixtiClumsy3.0.apk"
+  ],
+  "treeExpansionsV2": [],
+  "codeData": {
+    "comments": [],
+    "renames": []
+  },
+  "openTabs": [],
+  "cacheDir": "C:\\Users\\ishut\\AppData\\Local\\skylot\\jadx\\cache\\projects\\MerixtiClumsy3.0-db062b5ee62f49c507465cadaeb11501",
+  "enableLiveReload": false,
+  "searchHistory": [
+    "packetmanipulator"
+  ],
+  "searchResourcesFilter": "$TEXT",
+  "searchResourcesSizeLimit": 0,
+  "pluginOptions": {}
+}
