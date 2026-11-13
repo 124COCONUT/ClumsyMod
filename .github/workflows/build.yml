@@ -1,0 +1,41 @@
+name: Build ClumsyMod APK
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Unzip Project
+      run: |
+        unzip -o ОООО.zip -d .
+        # Если внутри архива есть еще одна папка ОООО, заходим в нее
+        if [ -d "ОООО" ]; then cd ОООО; fi
+
+    - name: set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Grant execute permission for gradlew
+      run: |
+        if [ -d "ОООО" ]; then cd ОООО; fi
+        chmod +x gradlew
+
+    - name: Build with Gradle
+      run: |
+        if [ -d "ОООО" ]; then cd ОООО; fi
+        ./gradlew assembleDebug --stacktrace
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: ClumsyMod-debug
+        path: |
+          **/build/outputs/apk/debug/*.apk
